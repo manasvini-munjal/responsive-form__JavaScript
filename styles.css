@@ -1,0 +1,316 @@
+/**
+  * TABLE OF CONTENTS
+  *
+  * SETTINGS
+  * Global..................Globally-available variables and config.
+  *
+  * TOOLS
+  * Mixins..................Useful mixins
+  *
+  * GENERIC
+  * Normalize.css...........A level playing field.
+  * Box-sixing..............Better default `box-sizing`.
+  *
+  * BASE
+  * Headings................h1-h6 styles.
+  *
+  * OBJECTS
+  * Wrappers................Wrapping and constraining elements
+  *
+  * COMPONENTS
+  * Page-head............... The main page header.
+  * Page-foot............... The main page footer
+  * BUttons................. Button elements.
+  *
+  * TRUMPS
+  * Text.................... Text helpers.
+  */
+
+
+
+
+
+
+/*----------------------------------- *\
+       #GLOBAL
+\*----------------------------------- */
+
+/* this is some magical font-importing. */
+
+@import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;1,900&display=swap');
+
+
+body {
+    margin: 0;
+    background: #eee;
+    font-family: Besley, serif;
+  }
+
+a {
+    text-decoration: none;
+  }
+  
+ul {
+    list-style-type: none;
+  }
+
+section {
+    padding: 80px 20px;
+}
+
+/**
+  * Media Objects Global Styles 
+  * Used in 
+  * 1. Hero-Section
+  * 2. CTA-Section
+  *
+  */
+
+.o-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.o-media__header {
+    font-size: 48px;
+    font-weight: 900;
+    color: #F9FAF8;
+}
+
+.o-media__content {
+    font-size: 18px;
+    color: #E5E7EB;
+    flex: 1;
+    padding: 10px 20px;
+    min-width: 250px;
+    
+}
+
+.o-media__figure {
+    max-width: 480px;
+    height: auto;
+}
+
+/**
+  * Button styles used throughout the site
+  */
+
+button.o-btn--primary {
+    border: none;
+    border-radius: 8px;
+    background: #3882F6;
+    color: white;
+    padding: 8px 24px;
+  }
+
+button.o-btn--cta {
+    border: 1px solid #ffffff;
+    background: transparent;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 8px 24px;
+    margin-top: 15px;
+}
+
+
+/**
+  * Alignment styles used throughout the site
+  */
+
+.o-push--right {
+    display: flex;
+    gap: 16px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+
+
+
+
+/*----------------------------------- *\
+       #HEADER
+\*----------------------------------- */
+
+.c-header {
+  background: #1F2937;
+  }
+
+.c-header__logo {
+    max-width: 195px;
+    height: auto;
+}
+
+.c-nav__links{
+  display: flex;
+  margin-bottom: 0;
+  padding: 10px;
+}
+
+.c-nav__links li a{
+    color: #ffffff;
+}
+
+
+
+
+
+
+/*----------------------------------- *\
+       #HERO-SECTION
+\*----------------------------------- */
+
+.c-hero-section {
+    background: #1F2937;
+    color: #ffffff;
+}
+
+
+
+
+
+/*----------------------------------- *\
+       #INFO-SECTION
+\*----------------------------------- */
+
+/**
+  * o- prefic for global styles :
+  * Info Section's layout can be applied
+  * for other layouts throughout the site.
+  */
+
+.o-info-section {
+    text-align: center;
+}
+
+
+.o-info__container {
+    display: flex;
+    justify-content: center;
+    gap: 52px;
+    margin-top: 32px;
+}
+
+.o-info__image {
+    width: 250px;
+    height: auto;
+}
+
+
+
+
+
+/*----------------------------------- *\
+       #TESTIMONIAL-SECTION
+\*----------------------------------- */
+
+.c-testimonial-section {
+    background: #E5E7EB;
+}
+
+/* div. prefix to override default Bootstrap container styles */
+
+div.c-testimonial__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0 60px;
+}
+
+.c-testimonial__wrapper h3 {
+    font-size: 36px;
+    font-weight: 300;
+    color: #152937;
+}
+
+.c-testimonial__wrapper span {
+    margin-left: auto;
+    padding-right: 60px;
+}
+
+
+
+
+
+/*----------------------------------- *\
+       #CTA-SECTION
+\*----------------------------------- */
+
+.c-cta__container {
+    background: #3882F6;
+    color: #ffffff;
+    padding: 40px 20px;
+    border-radius: 8px;
+}
+
+.c-cta__container h5 {
+    font-weight: 700;
+}
+
+/**
+  * Specificity for the selector below
+  * to override global styling for media
+  * objects.
+  * 1. Refer to global styles section(#GLOBAL)
+  * for reference.
+  */
+
+.c-cta__container .o-media__content{
+    flex: initial;
+    padding: 10px 85px;
+}
+
+
+
+
+
+
+/*----------------------------------- *\
+       #FOOTER
+\*----------------------------------- */
+
+.c-footer {
+    background: #1F2937;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.c-footer__copyright {
+    margin: 0;
+}
+
+
+
+
+
+/*----------------------------------- *\
+       #RESPONSIVE
+\*----------------------------------- */
+
+/* 
+  ##Device = Laptops, Desktops, Tablets, Ipads, Mobiles
+  ##Screen = Below 1280PX;
+*/
+
+@media screen and (max-width: 1280px) {
+    .o-info__container {
+        flex-wrap: wrap;
+    }
+}
+
+/* 
+  ##Device = Laptops, Desktops, Tablets, Ipads, Mobiles
+  ##Screen = Below 1024PX;
+*/
+
+@media screen and (max-width: 1024px) {
+    .c-hero-section .o-media__figure {
+        margin-top: 30px;
+        max-width: 500px;
+    }
+}
