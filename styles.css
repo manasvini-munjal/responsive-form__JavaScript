@@ -35,125 +35,145 @@
        #GLOBAL
 \*----------------------------------- */
 
-/* this is some magical font-importing. */
-
-@import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;1,900&display=swap');
-
+:root {
+  --alpha-light: 0.8;
+  --alpha-dark: 0.15;
+  --white: 255,255,255;
+  --off-white: 250,249,246;
+  --dark-grey: 51,51,51;
+  --light-grey: 242,242,242;
+  --brand-blue: 10,35,65;
+  --black: 0,0,0;
+  --red: 196,30,58;
+}
 
 body {
-    margin: 0;
-    background: #eee;
-    font-family: Besley, serif;
-  }
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: rgb(var(--off-white));
+}
 
 a {
-    text-decoration: none;
-  }
-  
+  text-decoration: none;
+}
+
 ul {
-    list-style-type: none;
-  }
+  list-style-type: none;
+}
 
 section {
-    padding: 80px 20px;
+  padding: 80px 20px;
+}
+
+.container {
+  display: flex;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+::placeholder {
+  color: rgb(var(--dark-grey));
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgb(var(--dark-grey));
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgb(var(--dark-grey));
 }
 
 /**
-  * Media Objects Global Styles 
-  * Used in 
-  * 1. Hero-Section
-  * 2. CTA-Section
-  *
+  * o- prefic for global styles :
+  * layout can be applied
+  * for other layouts throughout the site.
   */
 
 .o-media {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .o-media__header {
-    font-size: 48px;
-    font-weight: 900;
-    color: #F9FAF8;
+  font-size: 48px;
+  font-weight: 900;
+  color: rgb(var(--off-white));
 }
 
 .o-media__content {
-    font-size: 18px;
-    color: #E5E7EB;
-    flex: 1;
-    padding: 10px 20px;
-    min-width: 250px;
-    
+  font-size: 18px;
+  color: rgb(var(--off-white));
+  padding: 10px 20px;
+  flex: 1;
 }
 
-.o-media__figure {
-    max-width: 480px;
-    height: auto;
+.o-brand__info {
+  display: flex;
+  align-items: center;
 }
 
-/**
-  * Button styles used throughout the site
-  */
-
-button.o-btn--primary {
-    border: none;
-    border-radius: 8px;
-    background: #3882F6;
-    color: white;
-    padding: 8px 24px;
-  }
-
-button.o-btn--cta {
-    border: 1px solid #ffffff;
-    background: transparent;
-    color: #ffffff;
-    border-radius: 8px;
-    padding: 8px 24px;
-    margin-top: 15px;
+.o-brand__info i {
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  padding: 16px 8px 2px;
+  border: 1px solid rgb(var(--white));
+  color: rgb(var(--white));
+  text-align: center;
+  margin: 0 25px 12px 0;
 }
 
+.o-brand__info p {
+  flex: 1;
+}
 
-/**
-  * Alignment styles used throughout the site
-  */
+.o-brand__info p strong {
+  margin-right: 10px;
+}
 
 .o-push--right {
-    display: flex;
-    gap: 16px;
-    padding: 10px;
-    margin-left: auto;
-    margin-right: 10px;
+  margin-left: auto;
 }
 
-
-
-
-
-/*----------------------------------- *\
-       #HEADER
-\*----------------------------------- */
-
-.c-header {
-  background: #1F2937;
-  }
-
-.c-header__logo {
-    max-width: 195px;
-    height: auto;
+.o-btn-primary{
+  display: block;
+  margin-top: 20px;
+  background-color:rgb(var(--brand-blue));
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.c-nav__links{
-  display: flex;
-  margin-bottom: 0;
-  padding: 10px;
+.o-btn-primary:hover {
+ 
 }
 
-.c-nav__links li a{
-    color: #ffffff;
+input[type=text],
+input[type=email],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
 }
 
+.o-required:after {
+  content: ' *';
+  font-size: 14px;
+  color: rgb(var(--red));
+}
 
 
 
@@ -164,8 +184,12 @@ button.o-btn--cta {
 \*----------------------------------- */
 
 .c-hero-section {
-    background: #1F2937;
-    color: #ffffff;
+  background-color: rgba(var(--brand-blue), var(--alpha-light));
+  background-image: url('./images/geometric-g7457aa99e_1920.jpg');
+  background-size: cover;
+  background-blend-mode: multiply;
+  color: var(--white);
+  padding-bottom: 140px;
 }
 
 
@@ -173,95 +197,71 @@ button.o-btn--cta {
 
 
 /*----------------------------------- *\
-       #INFO-SECTION
+       #CONTACT-SECTION
 \*----------------------------------- */
-
-/**
-  * o- prefic for global styles :
-  * Info Section's layout can be applied
-  * for other layouts throughout the site.
-  */
-
-.o-info-section {
-    text-align: center;
+.c-contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0;
+  margin-top: -60px;
 }
 
-
-.o-info__container {
-    display: flex;
-    justify-content: center;
-    gap: 52px;
-    margin-top: 32px;
+.c-contact__wrapper {
+  -webkit-box-shadow: 0px 21px 41px -13px rgba(var(--black), var(--alpha-dark));
+  -moz-box-shadow: 0px 21px 41px -13px rgba(var(--black), var(--alpha-dark));
+  box-shadow: 0px 21px 41px -13px rgba(var(--black), var(--alpha-dark));
+  display: flex;
+  flex-direction: row-reverse;
+  max-width: 1000px;
+  border-radius: 7px;
+  overflow: hidden;
 }
 
-.o-info__image {
-    width: 250px;
-    height: auto;
+.form--contact {
+  max-width: 750px;
+  background: rgba(var(--light-grey), var(--alpha-light));
+  padding: 20px;
+  flex: 1
 }
 
-
-
-
-
-/*----------------------------------- *\
-       #TESTIMONIAL-SECTION
-\*----------------------------------- */
-
-.c-testimonial-section {
-    background: #E5E7EB;
+.c-contact__wrapper .o-brand {
+  padding: 36px;
+  color: rgb(var(--white));
+  background: rgb(var(--brand-blue));
+  flex: 1;
 }
 
-/* div. prefix to override default Bootstrap container styles */
-
-div.c-testimonial__wrapper {
-    display: flex;
-    flex-direction: column;
-    padding: 0 60px;
+.form--contact .form__label {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
-.c-testimonial__wrapper h3 {
-    font-size: 36px;
-    font-weight: 300;
-    color: #152937;
+.form--contact .form__input {
+  border: none;
+  background: rgb(var(--light-grey));
+  border-bottom: 1px solid rgba(var(--black), var(--alpha-dark));
+  transition: all 0.6s ease-in-out;
 }
 
-.c-testimonial__wrapper span {
-    margin-left: auto;
-    padding-right: 60px;
+.form--contact .form__input:focus,
+.form--contact .form__input:active {
+  border: none;
+  border-bottom: 1px solid rgb(var(--brand-blue));
 }
 
-
-
-
-
-/*----------------------------------- *\
-       #CTA-SECTION
-\*----------------------------------- */
-
-.c-cta__container {
-    background: #3882F6;
-    color: #ffffff;
-    padding: 40px 20px;
-    border-radius: 8px;
+.form--contact .form__input:focus-visible {
+  outline: none;
 }
 
-.c-cta__container h5 {
-    font-weight: 700;
+.form--contact textarea {
+  height: 200px;
 }
 
-/**
-  * Specificity for the selector below
-  * to override global styling for media
-  * objects.
-  * 1. Refer to global styles section(#GLOBAL)
-  * for reference.
-  */
-
-.c-cta__container .o-media__content{
-    flex: initial;
-    padding: 10px 85px;
+.form--contact h3 {
+  margin-top: -10px;
 }
-
 
 
 
@@ -272,16 +272,30 @@ div.c-testimonial__wrapper {
 \*----------------------------------- */
 
 .c-footer {
-    background: #1F2937;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+  background: rgb(var(--brand-blue));
+  color: #ffffff;
+  padding: 15px 20px;
 }
 
-.c-footer__copyright {
-    margin: 0;
+.c-footer__menu {
+  display: flex;
+  gap: 10px;
+  padding-left: 0;
+}
+
+.c-footer a {
+  font-size: 12px;
+  border: 1px solid rgb(var(--white));
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.08s ease-in-out;
+
+}
+
+.c-footer a:hover {
+  background: rgb(var(--white));
+  color: rgb(var(--brand-blue));
 }
 
 
@@ -298,9 +312,9 @@ div.c-testimonial__wrapper {
 */
 
 @media screen and (max-width: 1280px) {
-    .o-info__container {
-        flex-wrap: wrap;
-    }
+  .o-info__container {
+    flex-wrap: wrap;
+  }
 }
 
 /* 
@@ -309,8 +323,8 @@ div.c-testimonial__wrapper {
 */
 
 @media screen and (max-width: 1024px) {
-    .c-hero-section .o-media__figure {
-        margin-top: 30px;
-        max-width: 500px;
-    }
+  .c-contact__wrapper {
+    flex-direction: column;
+  }
 }
+
