@@ -175,6 +175,14 @@ textarea {
   color: rgb(var(--red));
 }
 
+input:invalid {
+  border-color: red;
+}
+
+input:valid {
+  border-color: green;
+}
+
 
 
 
@@ -260,7 +268,7 @@ textarea {
 }
 
 .form--contact h3 {
-  margin-top: -10px;
+  margin-top: 12px;
 }
 
 
@@ -285,6 +293,7 @@ textarea {
 
 .c-footer a {
   font-size: 12px;
+  color: rgb(var(--white));
   border: 1px solid rgb(var(--white));
   padding: 12px 20px;
   border-radius: 4px;
