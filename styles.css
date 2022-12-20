@@ -114,6 +114,10 @@ section {
   flex: 1;
 }
 
+.o-brand h3 {
+  margin-top: -4px;
+}
+
 .o-brand__info {
   display: flex;
   align-items: center;
@@ -151,10 +155,12 @@ section {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: all 0.07s ease-in-out;
 }
 
 .o-btn-primary:hover {
- 
+  padding: 12px 24px;
+  font-weight: 900;
 }
 
 input[type=text],
