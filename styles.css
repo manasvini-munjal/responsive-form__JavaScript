@@ -2,28 +2,24 @@
   * TABLE OF CONTENTS
   *
   * SETTINGS
+  * Root....................Variables
+  *
   * Global..................Globally-available variables and config.
   *
-  * TOOLS
-  * Mixins..................Useful mixins
-  *
   * GENERIC
-  * Normalize.css...........A level playing field.
   * Box-sixing..............Better default `box-sizing`.
   *
   * BASE
   * Headings................h1-h6 styles.
+  * Buttons.................Button elements
+  * 
+  * SECTIONS
+  * #HERO-SECTION
+  * #CONTACT-SECTION
+  * #FOOTER-SECTION
   *
-  * OBJECTS
-  * Wrappers................Wrapping and constraining elements
-  *
-  * COMPONENTS
-  * Page-head............... The main page header.
-  * Page-foot............... The main page footer
-  * BUttons................. Button elements.
-  *
-  * TRUMPS
-  * Text.................... Text helpers.
+  * RESPONSIVE
+  * Media Queries........... Cross-browser styling
   */
 
 
